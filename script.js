@@ -1,65 +1,83 @@
-// script.js dosyası
-
-// Vizyondaki filmler
-const vizyondakiFilmler = [
-    { ad: 'Film 1', tur: 'Aksiyon' },
-    { ad: 'Film 2', tur: 'Drama' },
-    { ad: 'Film 3', tur: 'Komedi' },
-    // Diğer filmler buraya eklenecek
+// Film verilerini içeren bir dizi
+var filmData = [
+  { ad: "Film 1", vizyonda: true, resim: "https://via.placeholder.com/150" },
+  { ad: "Film 2", vizyonda: false, resim: "https://via.placeholder.com/200" },
+  { ad: "Film 3", vizyonda: true, resim: "https://via.placeholder.com/150" },
+  { ad: "Film 4", vizyonda: false, resim: "https://via.placeholder.com/200" },
+  { ad: "Film 5", vizyonda: true, resim: "https://via.placeholder.com/150" },
+  { ad: "Film 6", vizyonda: false, resim: "https://via.placeholder.com/200" }
 ];
 
-// Gelecek filmler
-const gelecekFilmler = [
-    { ad: 'Film 4', tur: 'Bilim Kurgu' },
-    { ad: 'Film 5', tur: 'Romantik' },
-    { ad: 'Film 6', tur: 'Gerilim' },
-    // Diğer filmler buraya eklenecek
-];
+// DOM elementlerini seçme
+var vizyondakiFilmlerBtn = document.getElementById("vizyondakiFilmlerBtn");
+var gelecekFilmlerBtn = document.getElementById("gelecekFilmlerBtn");
+var filmListesi = document.getElementById("filmListesi");
 
-const filmListesi = document.getElementById('filmListesi');
-const gelecekFilmlerBtn = document.getElementById('gelecekFilmlerBtn');
-const vizyondakiFilmlerBaslik = document.getElementById('vizyondakiFilmlerBaslik');
+// Sayfa yüklendiğinde vizyondaki filmler butonu aktif olsun ve vizyondaki filmleri listele
+window.onload = function () {
+  vizyondakiFilmlerBtn.classList.add("aktif"); // Vizyondaki filmler butonunu aktif yap
+  listeleVizyondakiFilmler(); // Vizyondaki filmleri listele
+};
 
-let basilmaDurumu = 0;
-
-// Vizyondaki filmleri listele
-function vizyondakiFilmleriListele() {
-    vizyondakiFilmlerBaslik.textContent = 'Vizyondaki Filmler';
-    filmListesi.innerHTML = '';
-    for (let i = 0; i < vizyondakiFilmler.length; i++) {
-        const film = vizyondakiFilmler[i];
-        const filmLi = document.createElement('li');
-        filmLi.textContent = `${film.ad} (${film.tur})`;
-        filmListesi.appendChild(filmLi);
-    }
-    // Gelecek filmler butonunu güncelle
-    gelecekFilmlerBtn.textContent = 'Gelecek Filmler';
-    basilmaDurumu = 1;
-}
-
-// Gelecek filmleri listele
-function gelecekFilmleriListele() {
-    vizyondakiFilmlerBaslik.textContent = 'Gelecek Filmler';
-    filmListesi.innerHTML = '';
-    for (let i = 0; i < gelecekFilmler.length; i++) {
-        const film = gelecekFilmler[i];
-        const filmLi = document.createElement('li');
-        filmLi.textContent = `${film.ad} (${film.tur})`;
-        filmListesi.appendChild(filmLi);
-    }
-    // Gelecek filmler butonunu güncelle
-    gelecekFilmlerBtn.textContent = 'Vizyondaki Filmler';
-    basilmaDurumu = 0;
-}
-
-// Gelecek filmler butonuna tıklandığında duruma göre fonksiyonları çağır
-gelecekFilmlerBtn.addEventListener('click', function() {
-    if (basilmaDurumu === 0) {
-        vizyondakiFilmleriListele();
-    } else {
-        gelecekFilmleriListele();
-    }
+// Vizyondaki filmler butonuna tıklandığında
+vizyondakiFilmlerBtn.addEventListener("click", function () {
+  vizyondakiFilmlerBtn.classList.add("aktif"); // Vizyondaki filmler butonunu aktif yap
+  gelecekFilmlerBtn.classList.remove("aktif"); // Gelecek filmler butonunu pasif yap
+  listeleVizyondakiFilmler(); // Vizyondaki filmleri listele
 });
 
-// Sayfa yüklendiğinde vizyondaki filmleri listele
-document.addEventListener('DOMContentLoaded', vizyondakiFilmleriListele);
+// Gelecek filmler butonuna tıklandığında
+gelecekFilmlerBtn.addEventListener("click", function () {
+  gelecekFilmlerBtn.classList.add("aktif"); // Gelecek filmler butonunu aktif yap
+  vizyondakiFilmlerBtn.classList.remove("aktif"); // Vizyondaki filmler butonunu pasif yap
+  listeleGelecekFilmler(); // Gelecek filmleri listele
+});
+
+// Vizyondaki filmleri listeleme fonksiyonu
+function listeleVizyondakiFilmler() {
+  filmListesi.innerHTML = ""; // Film listesini temizle
+
+  // filmData dizisindeki vizyonda olan filmleri filmListesi elementine ekle
+  for (var i = 0; i < filmData.length; i++) {
+    if (filmData[i].vizyonda) {
+      var li = document.createElement("li");
+
+      // Film resmini ekleyen img elementi
+      var img = document.createElement("img");
+      img.src = filmData[i].resim;
+        img.alt = filmData[i].ad;
+  li.appendChild(img);
+
+  // Film adını ekleyen span elementi
+  var span = document.createElement("span");
+  span.textContent = filmData[i].ad;
+  li.appendChild(span);
+
+  filmListesi.appendChild(li);
+}
+}
+}
+
+// Gelecek filmleri listeleme fonksiyonu
+function listeleGelecekFilmler() {
+filmListesi.innerHTML = ""; // Film listesini temizle
+
+// filmData dizisindeki vizyonda olmayan filmleri filmListesi elementine ekle
+for (var i = 0; i < filmData.length; i++) {
+if (!filmData[i].vizyonda) {
+var li = document.createElement("li");
+  // Film resmini ekleyen img elementi
+  var img = document.createElement("img");
+  img.src = filmData[i].resim;
+  img.alt = filmData[i].ad;
+  li.appendChild(img);
+
+  // Film adını ekleyen span elementi
+  var span = document.createElement("span");
+  span.textContent = filmData[i].ad;
+  li.appendChild(span);
+
+  filmListesi.appendChild(li);
+}
+}
+}
