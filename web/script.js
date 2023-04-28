@@ -1,13 +1,12 @@
 // Film verilerini içeren bir dizi
 var filmData = [
-  { ad: "Film 1", vizyonda: true, resim: "https://via.placeholder.com/150" },
-  { ad: "Film 2", vizyonda: false, resim: "https://via.placeholder.com/200" },
-  { ad: "Film 3", vizyonda: true, resim: "https://via.placeholder.com/150" },
-  { ad: "Film 4", vizyonda: false, resim: "https://via.placeholder.com/200" },
-  { ad: "Film 5", vizyonda: true, resim: "https://via.placeholder.com/150" },
-  { ad: "Film 6", vizyonda: false, resim: "https://via.placeholder.com/200" }
-];
-
+  { ad: "Film 1", vizyonda: true, resim: "/images/jw4_small.jpg" },
+  { ad: "Film 2", vizyonda: false, resim: "/images/galaksinin-koruyuculari-small.png" },
+  { ad: "Film 3", vizyonda: true, resim: "/images/super-mario-small.png" },
+  { ad: "Film 4", vizyonda: false, resim: "/images/askin-saati-1903-small.png" },
+  { ad: "Film 5", vizyonda: true, resim: "/images/hava-muhalefeti_small.png" },
+  { ad: "Film 6", vizyonda: false, resim: "/images/belle-ve-sebastian-cesur-dostum-small.png" }
+  ];
 // DOM elementlerini seçme
 var vizyondakiFilmlerBtn = document.getElementById("vizyondakiFilmlerBtn");
 var gelecekFilmlerBtn = document.getElementById("gelecekFilmlerBtn");
@@ -45,39 +44,43 @@ function listeleVizyondakiFilmler() {
       // Film resmini ekleyen img elementi
       var img = document.createElement("img");
       img.src = filmData[i].resim;
-        img.alt = filmData[i].ad;
-  li.appendChild(img);
+      img.alt = filmData[i].ad;
+      li.appendChild(img);
 
-  // Film adını ekleyen span elementi
-  var span = document.createElement("span");
-  span.textContent = filmData[i].ad;
-  li.appendChild(span);
+      // Film adını ekleyen span elementi
+      var span = document.createElement("span");
+      span.textContent = filmData[i].ad;
+      li.appendChild(span);
 
-  filmListesi.appendChild(li);
-}
-}
+      filmListesi.appendChild(li);
+    }
+  }
 }
 
-// Gelecek filmleri listeleme fonksiyonu
 function listeleGelecekFilmler() {
-filmListesi.innerHTML = ""; // Film listesini temizle
+  filmListesi.innerHTML = ""; // Film listesini temizle
 
-// filmData dizisindeki vizyonda olmayan filmleri filmListesi elementine ekle
-for (var i = 0; i < filmData.length; i++) {
-if (!filmData[i].vizyonda) {
-var li = document.createElement("li");
-  // Film resmini ekleyen img elementi
-  var img = document.createElement("img");
-  img.src = filmData[i].resim;
-  img.alt = filmData[i].ad;
-  li.appendChild(img);
+  // filmData dizisindeki vizyonda olmayan filmleri filmListesi elementine ekle
+  for (var i = 0; i < filmData.length; i++) {
+    if (!filmData[i].vizyonda) {
+      var li = document.createElement("li");
 
-  // Film adını ekleyen span elementi
-  var span = document.createElement("span");
-  span.textContent = filmData[i].ad;
-  li.appendChild(span);
+      // Film resmini ekleyen img elementi
+      var img = document.createElement("img");
+      img.src = filmData[i].resim;
+      img.alt = filmData[i].ad;
+      li.appendChild(img);
 
-  filmListesi.appendChild(li);
+      // Film adını ekleyen span elementi
+      var span = document.createElement("span");
+      span.textContent = filmData[i].ad;
+      li.appendChild(span);
+
+      filmListesi.appendChild(li);
+    }
+  }
 }
-}
-}
+
+
+
+
