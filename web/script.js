@@ -40,7 +40,8 @@ function listeleVizyondakiFilmler() {
   for (var i = 0; i < filmData.length; i++) {
     if (filmData[i].vizyonda) {
       var li = document.createElement("li");
-
+      li.classList.add("film-karti");
+      
       // Film resmini ekleyen img elementi
       var img = document.createElement("img");
       img.src = filmData[i].resim;
@@ -49,6 +50,7 @@ function listeleVizyondakiFilmler() {
 
       // Film adını ekleyen span elementi
       var span = document.createElement("span");
+      span.classList.add("film-ad");
       span.textContent = filmData[i].ad;
       li.appendChild(span);
 
@@ -64,6 +66,7 @@ function listeleGelecekFilmler() {
   for (var i = 0; i < filmData.length; i++) {
     if (!filmData[i].vizyonda) {
       var li = document.createElement("li");
+      li.classList.add("film-karti");
 
       // Film resmini ekleyen img elementi
       var img = document.createElement("img");
@@ -73,6 +76,7 @@ function listeleGelecekFilmler() {
 
       // Film adını ekleyen span elementi
       var span = document.createElement("span");
+      span.classList.add("film-ad");
       span.textContent = filmData[i].ad;
       li.appendChild(span);
 
@@ -80,6 +84,8 @@ function listeleGelecekFilmler() {
     }
   }
 }
+
+
 
 
 
