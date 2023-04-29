@@ -1,4 +1,4 @@
 # movie-booking
 CURRENT STATE:
 
-![image](https://user-images.githubusercontent.com/65857425/235256807-c1617120-5100-4b18-834a-af94810a0169.png)
+![image](https://user-images.githubusercontent.com/65857425/235326631-5c7537a8-4e58-46ec-8614-fcf9c2e4943c.png)
