@@ -5,7 +5,13 @@ var filmData = [
   { ad: "Film 3", vizyonda: true, resim: "/images/super-mario-small.png" },
   { ad: "Film 4", vizyonda: false, resim: "/images/askin-saati-1903-small.png" },
   { ad: "Film 5", vizyonda: true, resim: "/images/hava-muhalefeti_small.png" },
-  { ad: "Film 6", vizyonda: false, resim: "/images/belle-ve-sebastian-cesur-dostum-small.png" }
+  { ad: "Film 6", vizyonda: false, resim: "/images/belle-ve-sebastian-cesur-dostum-small.png" },
+  { ad: "Film 7", vizyonda: true, resim: "/images/jw4_small.jpg" },
+  { ad: "Film 8", vizyonda: true, resim: "/images/galaksinin-koruyuculari-small.png" },
+  { ad: "Film 9", vizyonda: true, resim: "/images/super-mario-small.png" },
+  { ad: "Film 10", vizyonda: true, resim: "/images/askin-saati-1903-small.png" },
+  { ad: "Film 11", vizyonda: true, resim: "/images/hava-muhalefeti_small.png" },
+  { ad: "Film 12", vizyonda: true, resim: "/images/belle-ve-sebastian-cesur-dostum-small.png" }
   ];
 // DOM elementlerini seçme
 var vizyondakiFilmlerBtn = document.getElementById("vizyondakiFilmlerBtn");
@@ -34,56 +40,81 @@ gelecekFilmlerBtn.addEventListener("click", function () {
 
 // Vizyondaki filmleri listeleme fonksiyonu
 function listeleVizyondakiFilmler() {
-  filmListesi.innerHTML = ""; // Film listesini temizle
+  movieListContainer.innerHTML = ""; // Movie list containeri temizle
 
-  // filmData dizisindeki vizyonda olan filmleri filmListesi elementine ekle
+  // filmData dizisindeki vizyonda olan filmleri movieListContainer elementine ekle
   for (var i = 0; i < filmData.length; i++) {
     if (filmData[i].vizyonda) {
-      var li = document.createElement("li");
-      li.classList.add("film-karti");
-      
-      // Film resmini ekleyen img elementi
+      var a = document.createElement("a");
+      a.href = "#";
+
+      var div = document.createElement("div");
+
       var img = document.createElement("img");
       img.src = filmData[i].resim;
       img.alt = filmData[i].ad;
-      li.appendChild(img);
+      div.appendChild(img);
 
-      // Film adını ekleyen span elementi
-      var span = document.createElement("span");
-      span.classList.add("film-ad");
-      span.textContent = filmData[i].ad;
-      li.appendChild(span);
+      var h2 = document.createElement("h2");
+      h2.textContent = filmData[i].ad;
+      div.appendChild(h2);
 
-      filmListesi.appendChild(li);
+      a.appendChild(div);
+
+      movieListContainer.appendChild(a);
     }
   }
 }
+
 
 function listeleGelecekFilmler() {
-  filmListesi.innerHTML = ""; // Film listesini temizle
+  movieListContainer.innerHTML = ""; // Movie list containeri temizle
 
-  // filmData dizisindeki vizyonda olmayan filmleri filmListesi elementine ekle
+  // filmData dizisindeki vizyonda olmayan filmleri movieListContainer elementine ekle
   for (var i = 0; i < filmData.length; i++) {
     if (!filmData[i].vizyonda) {
-      var li = document.createElement("li");
-      li.classList.add("film-karti");
+      var a = document.createElement("a");
+      a.href = "#";
 
-      // Film resmini ekleyen img elementi
+      var div = document.createElement("div");
+
       var img = document.createElement("img");
       img.src = filmData[i].resim;
       img.alt = filmData[i].ad;
-      li.appendChild(img);
+      div.appendChild(img);
 
-      // Film adını ekleyen span elementi
-      var span = document.createElement("span");
-      span.classList.add("film-ad");
-      span.textContent = filmData[i].ad;
-      li.appendChild(span);
+      var h2 = document.createElement("h2");
+      h2.textContent = filmData[i].ad;
+      div.appendChild(h2);
 
-      filmListesi.appendChild(li);
+      a.appendChild(div);
+
+      movieListContainer.appendChild(a);
     }
+ 
+
   }
 }
+
+const movieListWrapper = document.querySelector('.movie-list-wrapper');
+const movieListContainer = document.querySelector('.movie-list-container');
+const prevButton = document.querySelector('.prev-button');
+const nextButton = document.querySelector('.next-button');
+const movieItemWidth = document.querySelector('.movie-item').offsetWidth;
+const containerWidth = movieListWrapper.offsetWidth;
+
+let scrollPosition = 0;
+
+prevButton.addEventListener('click', () => {
+  scrollPosition = Math.max(scrollPosition - containerWidth, 0);
+  movieListContainer.style.transform = `translateX(-${scrollPosition}px)`;
+});
+
+nextButton.addEventListener('click', () => {
+  scrollPosition = Math.min(scrollPosition + containerWidth, movieListContainer.scrollWidth - containerWidth);
+  movieListContainer.style.transform = `translateX(-${scrollPosition}px)`;
+});
+
 
 
 
