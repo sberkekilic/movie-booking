@@ -96,28 +96,60 @@ function listeleGelecekFilmler() {
   }
 }
 
-const movieListWrapper = document.querySelector('.movie-list-wrapper');
-const movieListContainer = document.querySelector('.movie-list-container');
-const prevButton = document.querySelector('.prev-button');
-const nextButton = document.querySelector('.next-button');
-const movieItemWidth = document.querySelector('.movie-item').offsetWidth;
-const containerWidth = movieListWrapper.offsetWidth;
+const movieListWrapper = document.querySelector(".movie-list-wrapper");
+const movieListContainer = document.querySelector(".movie-list-container");
+const prevButton = document.querySelector(".prev-button");
+const nextButton = document.querySelector(".next-button");
+const visibleMovies = 7.5;
 
-let scrollPosition = 0;
+let currentIndex = 0;
 
-prevButton.addEventListener('click', () => {
-  scrollPosition = Math.max(scrollPosition - containerWidth, 0);
-  movieListContainer.style.transform = `translateX(-${scrollPosition}px)`;
-});
+function renderMovieList() {
+  let moviesToRender = getMoviesToRender();
+  movieListContainer.innerHTML = "";
+  moviesToRender.forEach(movie => {
+    let movieItem = document.createElement("div");
+    movieItem.classList.add("movie");
+    movieItem.innerHTML = `
+      <img src="${movie.resim}" alt="${movie.ad}">
+      <h2>${movie.ad}</h2>
+    `;
+    movieListContainer.appendChild(movieItem);
+  });
+}
 
-nextButton.addEventListener('click', () => {
-  scrollPosition = Math.min(scrollPosition + containerWidth, movieListContainer.scrollWidth - containerWidth);
-  movieListContainer.style.transform = `translateX(-${scrollPosition}px)`;
-});
+function getMoviesToRender() {
+  let moviesToRender = [];
+  for (let i = 0; i < visibleMovies; i++) {
+    let index = (currentIndex + i) % filmData.length;
+    moviesToRender.push(filmData[index]);
+  }
+  return moviesToRender;
+}
 
+function handlePrevButton() {
+  currentIndex -= 1;
 
+  if (currentIndex < 0) {
+    currentIndex = filmData.length - 1;
+  }
 
+  renderMovieList();
+}
 
+function handleNextButton() {
+  currentIndex += 1;
 
+  if (currentIndex >= filmData.length) {
+    currentIndex = 0;
+  }
 
+  renderMovieList();
+}
+
+renderMovieList();
+
+prevButton.addEventListener("click", handlePrevButton);
+
+nextButton.addEventListener("click", handleNextButton);
 
