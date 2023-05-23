@@ -30,7 +30,6 @@ header {
   list-style-type: none;
 }
 
-
 .movie-card {
   display: flex;
   flex-direction: column;
@@ -51,7 +50,6 @@ header {
   text-align: center;
   font-weight: bold;
 }
-
 
 #film-listesi {
   display: flex;
@@ -105,7 +103,6 @@ li.film-karti {
   display: block;
   margin-top: 10px;
 }
-
 
 .login-button,
 .signup-button {
