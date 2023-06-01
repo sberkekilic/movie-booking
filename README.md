@@ -1,4 +1,4 @@
 # movie-booking
-CURRENT STATE:
+Index Page:
 
-![image](https://user-images.githubusercontent.com/65857425/236362404-16b9f6ee-8e06-4ce5-81c9-68f61669a8a7.png)
+![image](https://github.com/sberkekilic/movie-booking/assets/65857425/70939e35-8234-4479-bcb8-548d1ea0bb16)
