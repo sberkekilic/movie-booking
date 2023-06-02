@@ -17,11 +17,11 @@ header {
 
 .butonlar {
   display: flex;
-  justify-content: left;
+  justify-content: flex-start;
   margin: 20px 0;
 }
 
-#filmListesi {
+#film-listesi {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
@@ -40,6 +40,10 @@ header {
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
   position: relative;
   overflow: hidden;
+}
+
+.movie-name {
+  text-align: center;
 }
 
 .movie-card:hover .overlay-button {
@@ -133,13 +137,6 @@ header {
   margin: 20px;
 }
 
-.film-karti img {
-  width: 200px;
-  height: 300px;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-
 li.film-karti {
   display: inline-block;
   vertical-align: top;
@@ -203,19 +200,38 @@ footer {
 .movie-list-wrapper {
   position: relative;
   overflow-x: hidden;
+  width: 100%;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: transform 0.9s ease-in-out;
+  white-space: nowrap;
 }
 
 .movie-list-container {
-  display: flex;
+  display: inline-block;
   flex-wrap: nowrap;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.9s ease-in-out;
+  width: 100%;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 10px;
+  scroll-snap-type: x mandatory;
+}
+
+.movie-list-container::-webkit-scrollbar {
+  display: none;
+}
+
+.movie-list-container > * {
+  flex: 0 0 auto;
 }
 
 .movie-item {
   margin-right: 20px;
+  scroll-snap-align: center;
 }
 
 .movie-item img {
@@ -253,6 +269,7 @@ footer {
   color: #000;
   margin-top: auto;
   margin-bottom: auto;
+  flex-shrink: 0;
 }
 
 .prev-button:hover,
@@ -309,6 +326,8 @@ footer {
 
 .image {
   position: relative;
+  display: inline-block;
+  margin: 10px;
 }
 
 .roll-over {
