@@ -28,6 +28,7 @@ header {
   padding: 0;
   margin: 0;
   list-style-type: none;
+  scroll-behavior: smooth; /* Yavaş kaydırma efekti */
 }
 
 .movie-card {
@@ -205,14 +206,12 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: transform 0.9s ease-in-out;
   white-space: nowrap;
 }
 
 .movie-list-container {
   display: inline-block;
   flex-wrap: nowrap;
-  transition: transform 0.9s ease-in-out;
   width: 100%;
   overflow-x: auto;
   scroll-behavior: smooth;

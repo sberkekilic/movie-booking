@@ -106,7 +106,6 @@ const visibleMovies = 7.5;
 let currentIndexVizyondaki = 0;
 let currentIndexGelecek = 0;
 
-
 // Next Button Event Listener
 nextButton.addEventListener("click", handleNextButton);
 
@@ -168,8 +167,14 @@ function renderMovieList() {
     // Butonu oluştur
     let button = document.createElement("a");
     button.classList.add("btn", "btn-reverse");
-    button.href = "login.html";
+    /*button.href = "buy-ticket.html";*/
     button.textContent = "Bilet Al";
+    let movieNameParam = encodeURIComponent(movie.ad.toLowerCase().replace(/\s+/g, '-'));
+    let url = `/pages/buy-ticket.html?movie_name=${movieNameParam}`;
+    button.setAttribute("href", url);
+    button.addEventListener("click", function() {
+      window.location.href = url;
+    });
     // Buton divine butonu ekle
     buttonDiv.appendChild(button);
     // Roll-over divine buton divini ekle
@@ -187,6 +192,7 @@ function renderMovieList() {
     imageDiv.addEventListener("mouseout", function(event) {
       resetImage(event);
     });
+  
   });
   // Sayfa ilk açıldığında bilet al butonunu göstermek için resetImage fonksiyonunu çağır
   resetImage();
@@ -209,6 +215,7 @@ function getMoviesToRender() {
   }
   return moviesToRender;
 }
+
 
 function handlePrevButton(event) {
   if (vizyondakiFilmlerBtn.classList.contains("aktif")) {

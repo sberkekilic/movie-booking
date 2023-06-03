@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Buy Ticket</title>
+  <!-- Add your CSS stylesheets and other head elements here -->
+</head>
+<body>
+  <h1>Buy Ticket</h1>
+
+  <script>
+    // Get the movie name parameter from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const movieName = urlParams.get('movie_name');
+
+    // Display the movie name on the page
+    const movieNameElement = document.createElement('p');
+    movieNameElement.textContent = `Movie: ${movieName}`;
+    document.body.appendChild(movieNameElement);
+  </script>
+
+  <!-- Add your HTML content and other body elements here -->
+</body>
+</html>
