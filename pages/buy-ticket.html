@@ -8,16 +8,23 @@
   <h1>Buy Ticket</h1>
 
   <script>
-    // Get the movie name parameter from the URL
+    // Get the movie name and image parameters from the URL
     const urlParams = new URLSearchParams(window.location.search);
     const movieName = urlParams.get('movie_name');
-
+    const movieImage = decodeURIComponent(urlParams.get('movie_image'));
+  
     // Display the movie name on the page
     const movieNameElement = document.createElement('p');
     movieNameElement.textContent = `Movie: ${movieName}`;
     document.body.appendChild(movieNameElement);
+  
+    // Display the movie image on the page
+    const movieImageElement = document.createElement('img');
+    movieImageElement.src = movieImage;
+    movieImageElement.alt = movieName;
+    document.body.appendChild(movieImageElement);
   </script>
-
-  <!-- Add your HTML content and other body elements here -->
+  
+  <!-- Add your HTML content and other body elements here -->  
 </body>
 </html>

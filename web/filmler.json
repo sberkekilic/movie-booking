@@ -1,0 +1,82 @@
+{ "filmler":
+    [
+        { 
+            "ad": "John Wick 4", 
+            "ing_ad": "John Wick: Chapter 4",
+            "release": "22 Mart 2023",
+            "desc":"Film, köpeğinin öldürülmesi üzerine yeniden yeraltı dünyasına karışan eski bir suikastçının maceralarının anlatıldığı John Wick filminin dördüncü devam halkasıdır. John Wick karakterine hayat veren Keanu Reeves, dördüncü devam halkası için bir kez daha kamera karşısına geçiyor.",
+            "director":"",
+            "cast":"",
+            "time":"",
+            "type":"",
+            "vizyonda": true, 
+            "resim": "/images/jw4_small.jpg" 
+        },
+        { 
+            "ad": "Film 2", 
+            "vizyonda": false, 
+            "resim": "/images/galaksinin-koruyuculari-small.png" 
+            
+        },
+        { 
+            "ad": "Film 3", 
+            "vizyonda": true, 
+            "resim": "/images/super-mario-small.png" 
+            
+        },
+        { 
+            "ad": "Film 4", 
+            "vizyonda": false, 
+            "resim": "/images/askin-saati-1903-small.png" 
+            
+        },
+        { 
+            "ad": "Film 5", 
+            "vizyonda": true, 
+            "resim": "/images/hava-muhalefeti_small.png" 
+            
+        },
+        { 
+            "ad": "Film 6", 
+            "vizyonda": false, 
+            "resim": "/images/belle-ve-sebastian-cesur-dostum-small.png" 
+            
+        },
+        { 
+            "ad": "Film 7", 
+            "vizyonda": true, 
+            "resim": "/images/jw4_small.jpg" 
+            
+        },
+        { 
+            "ad": "Film 8", 
+            "vizyonda": false, 
+            "resim": "/images/galaksinin-koruyuculari-small.png" 
+            
+        },
+        { 
+            "ad": "Film 9", 
+            "vizyonda": true, 
+            "resim": "/images/super-mario-small.png" 
+            
+        },
+        { 
+            "ad": "Film 10", 
+            "vizyonda": false, 
+            "resim": "/images/askin-saati-1903-small.png" 
+            
+        },
+        { 
+            "ad": "Film 11", 
+            "vizyonda": true, 
+            "resim": "/images/hava-muhalefeti_small.png" 
+            
+        },
+        { 
+            "ad": "Film 12", 
+            "vizyonda": false, 
+            "resim": "/images/belle-ve-sebastian-cesur-dostum-small.png" 
+            
+        }
+    ]
+}

@@ -1,33 +1,28 @@
-// Film verilerini içeren bir dizi
-var filmData = [
-  { ad: "Film 1", vizyonda: true, resim: "/images/jw4_small.jpg" },
-  { ad: "Film 2", vizyonda: false, resim: "/images/galaksinin-koruyuculari-small.png" },
-  { ad: "Film 3", vizyonda: true, resim: "/images/super-mario-small.png" },
-  { ad: "Film 4", vizyonda: false, resim: "/images/askin-saati-1903-small.png" },
-  { ad: "Film 5", vizyonda: true, resim: "/images/hava-muhalefeti_small.png" },
-  { ad: "Film 6", vizyonda: false, resim: "/images/belle-ve-sebastian-cesur-dostum-small.png" },
-  { ad: "Film 7", vizyonda: true, resim: "/images/jw4_small.jpg" },
-  { ad: "Film 8", vizyonda: false, resim: "/images/galaksinin-koruyuculari-small.png" },
-  { ad: "Film 9", vizyonda: true, resim: "/images/super-mario-small.png" },
-  { ad: "Film 10", vizyonda: false, resim: "/images/askin-saati-1903-small.png" },
-  { ad: "Film 11", vizyonda: true, resim: "/images/hava-muhalefeti_small.png" },
-  { ad: "Film 12", vizyonda: false, resim: "/images/belle-ve-sebastian-cesur-dostum-small.png" }
-];
 // DOM elementlerini seçme
 var prevButton = document.querySelector(".prev-button");
 var nextButton = document.querySelector(".next-button");
 var vizyondakiFilmlerBtn = document.getElementById("vizyondakiFilmlerBtn");
 var gelecekFilmlerBtn = document.getElementById("gelecekFilmlerBtn");
 var filmListesi = document.getElementById("filmListesi");
+var filmData;
 // Sayfa yüklendiğinde vizyondaki filmler butonu aktif olsun ve vizyondaki filmleri listele
 window.onload = function () {
-  vizyondakiFilmlerBtn.classList.add("aktif"); // Vizyondaki filmler butonunu aktif yap
-  vizyondakiFilmlerBtn.style.backgroundColor = "#ff0000"; // Set the background color to red
-  vizyondakiFilmlerBtn.style.color = "#ffffff"; // Set the text color to white
-  listeleVizyondakiFilmler(); // Vizyondaki filmleri listele
-  resetImage(); // Pass the event as a parameter
-  renderMovieList();
+  fetch("filmler.json")
+    .then(response => response.json())
+    .then(data => {
+      filmData = data.filmler;
+      vizyondakiFilmlerBtn.classList.add("aktif"); // Vizyondaki filmler butonunu aktif yap
+      vizyondakiFilmlerBtn.style.backgroundColor = "#ff0000"; // Set the background color to red
+      vizyondakiFilmlerBtn.style.color = "#ffffff"; // Set the text color to white
+      listeleVizyondakiFilmler(); // Vizyondaki filmleri listele
+      resetImage(); // Pass the event as a parameter
+      renderMovieList();
+    })
+    .catch(error => {
+      console.error("Error fetching film data:", error);
+    });
 };
+
 // Vizyondaki filmler butonuna tıklandığında
 vizyondakiFilmlerBtn.addEventListener("click", function () {
   if (!vizyondakiFilmlerBtn.classList.contains("aktif")) {
@@ -60,45 +55,45 @@ gelecekFilmlerBtn.addEventListener("click", function () {
 function listeleGelecekFilmler() {
   filmListesi.innerHTML = ""; // Film listesini temizle
   // filmData dizisindeki vizyonda olmayan filmleri filmListesi elementine ekle
-  for (var i = 0; i < filmData.length; i++) {
-    if (!filmData[i].vizyonda) {
+  filmData.forEach(function (film) {
+    if (!film.vizyonda) {
       var a = document.createElement("a");
       var div = document.createElement("div");
       var img = document.createElement("img");
-      img.src = filmData[i].resim;
-      img.alt = filmData[i].ad;
+      img.src = film.resim;
+      img.alt = film.ad;
       div.appendChild(img);
       var h2 = document.createElement("h2");
-      h2.textContent = filmData[i].ad;
+      h2.textContent = film.ad;
       div.appendChild(h2);
       a.appendChild(div);
       filmListesi.appendChild(a);
       div.addEventListener("mouseover", darkenImage);
       div.addEventListener("mouseout", resetImage);
     }
-  }
+  });
 }
 // Vizyondaki filmleri listeleme fonksiyonu
 function listeleVizyondakiFilmler() {
   filmListesi.innerHTML = ""; // Film listesini temizle
   // filmData dizisindeki vizyonda olan filmleri filmListesi elementine ekle
-  for (var i = 0; i < filmData.length; i++) {
-    if (filmData[i].vizyonda) {
+  filmData.forEach(function (film) {
+    if (film.vizyonda) {
       var a = document.createElement("a");
       var div = document.createElement("div");
       var img = document.createElement("img");
-      img.src = filmData[i].resim;
-      img.alt = filmData[i].ad;
+      img.src = film.resim;
+      img.alt = film.ad;
       div.appendChild(img);
       var h2 = document.createElement("h2");
-      h2.textContent = filmData[i].ad;
+      h2.textContent = film.ad;
       div.appendChild(h2);
       a.appendChild(div);
       filmListesi.appendChild(a);
       div.addEventListener("mouseover", darkenImage);
       div.addEventListener("mouseout", resetImage);
     }
-  }
+  });
 }
 const movieListWrapper = document.querySelector(".movie-list-wrapper");
 const movieListContainer = document.querySelector(".movie-list-container");
@@ -167,10 +162,9 @@ function renderMovieList() {
     // Butonu oluştur
     let button = document.createElement("a");
     button.classList.add("btn", "btn-reverse");
-    /*button.href = "buy-ticket.html";*/
     button.textContent = "Bilet Al";
     let movieNameParam = encodeURIComponent(movie.ad.toLowerCase().replace(/\s+/g, '-'));
-    let url = `/pages/buy-ticket.html?movie_name=${movieNameParam}`;
+    let url = `/pages/buy-ticket.html?movie_name=${movieNameParam}&movie_image=${encodeURIComponent(movie.resim)}`;
     button.setAttribute("href", url);
     button.addEventListener("click", function() {
       window.location.href = url;
