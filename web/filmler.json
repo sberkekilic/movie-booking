@@ -5,77 +5,154 @@
             "ing_ad": "John Wick: Chapter 4",
             "release": "22 Mart 2023",
             "desc":"Film, köpeğinin öldürülmesi üzerine yeniden yeraltı dünyasına karışan eski bir suikastçının maceralarının anlatıldığı John Wick filminin dördüncü devam halkasıdır. John Wick karakterine hayat veren Keanu Reeves, dördüncü devam halkası için bir kez daha kamera karşısına geçiyor.",
-            "director":"",
-            "cast":"",
-            "time":"",
-            "type":"",
+            "director":"Chad Stahelski",
+            "cast":"Keanu Reeves, Donnie Yen, Bill Skarsgård",
+            "time":"169 Dakika",
+            "type":"Aksiyon",
             "vizyonda": true, 
             "resim": "/images/jw4_small.jpg" 
         },
         { 
-            "ad": "Film 2", 
+            "ad": "Galaksinin Koruyucuları 3", 
+            "ing_ad":"Guardians of the Galaxy Vol. 3",
+            "release":"05 Mayıs 2023",
+            "desc":"Gamora’nın yokluğuyla başa çıkmaya çalışan Peter Quill’in hem ekibi hem de gezegeni korumak için herkesi bir araya getirme çabasına odaklanan filmde, bu görevin başarıyla tamamlanmaması Guardian’ların kaderini belirleyecek.",
+            "director":"James Gunn",
+            "cast":"Dave Bautista, Chris Pratt, Zoe Saldana",
+            "time":"150 Dakika",
+            "type":"Aksiyon",
             "vizyonda": false, 
             "resim": "/images/galaksinin-koruyuculari-small.png" 
             
         },
         { 
-            "ad": "Film 3", 
+            "ad": "Süper Mario Kardeşler Filmi",
+            "ing_ad":"The Super Mario Bros. Movie",
+            "release":"14 Nisan 2023",
+            "desc":"İkonik küresel eğlence markalarından Illumination ve Nintendo, son 40 yıldır pop kültürün en ünlü tesisatçılarının rol aldığı yeni, beyaz perde macerası Süper Mario Kardeşler Filmi’ni yapmak için güçlerini birleştiriyor. Nintendo’nun Mario oyunlarının dünyasına dayanan film, aksiyon yüklü, coşkulu, sinematik komedi filminde izleyicileri daha önce yapılanlara hiç benzemeyen canlı, heyecanlı yeni bir evrene davet ediyor. Brooklyn’li tesisatçılar Mario (Chris Pratt; Jurassic World ve LEGO Filmi serisi) ve erkek kardeşi Luigi (Charlie Day; It’s Always Sunny in Philadelphia) bir ana su borusunu tamir etmek için yeraltında çalışırken gizemli bir borudan aktarılarak sihirli, yeni bir dünyaya girerler. Ama kardeşler ayrı düşünce Mario, Luigi’yi bulmak için destansı bir maceraya çıkar.",
+            "director":"Michael Jelenic, Aaron Horvath",
+            "cast":"Jack Black, Anya Taylor-Joy, Chris Pratt",
+            "time":"92 Dakika",
+            "type":"Animasyon",
             "vizyonda": true, 
             "resim": "/images/super-mario-small.png" 
             
         },
         { 
-            "ad": "Film 4", 
+            "ad": "Aşkın Saati 19.03", 
+            "ing_ad":"The Hour of Love 19.03",
+            "release":"05 Mayıs 2023",
+            "desc":"Hikayemiz, Beşiktaşın şampiyonluğu uzun yıllar sonra şampiyonluğu yakalayan Beşiktaş ile başlar. Beşiktaş herkesi sevince boğar ama bir kişi hariç! Şampiyonluk maçını izleyen dede kalp krizinden ölür ve torunu büyük bir hüzün yaşar. Torun Oktay büyümüştür, işe giderken yolda bir anahtarlık bulur ve bulduğu dükkanın içine girmesiyle hayatının aşkına rastlar. Oktay’ın aşkı Aslı ise üniverite öğrencisidir ve tezini Beşiktaş semti üzerinden yazmaktadır.",
+            "director":"Hasan Gümet",
+            "cast":"Pascal Nouma, Ayhan Taş, Feride Hilal Akın, Berat Efe Parlar, Bülent Çolak",
+            "time":"114 Dakika",
+            "type":"Komedi",
             "vizyonda": false, 
             "resim": "/images/askin-saati-1903-small.png" 
             
         },
         { 
             "ad": "Film 5", 
+            "ing_ad":"",
+            "release":"",
+            "desc":"",
+            "director":"",
+            "cast":"",
+            "time":"",
+            "type":"",
             "vizyonda": true, 
             "resim": "/images/hava-muhalefeti_small.png" 
             
         },
         { 
-            "ad": "Film 6", 
+            "ad": "Belle ve Sebastian: Cesur Dostum", 
+            "ing_ad":"Belle and Sébastien: The New Generation",
+            "release":"12 Mayıs 2023",
+            "desc":"BELLE VE SEBASTİAN maceraları sinema, dizi ve birçok ülkede yayınlanan en çok satan çocuk kitabı koleksiyonudur. Bu sefer beyazperdeye 6 MAYIS 2023 ‘te en heyecan verici hikâyesiyle geliyor. 10 yaşındaki SEBASTİAN tatilini gönülsüzce büyükannesi ve teyzesiyle dağlarda geçirmek zorundadır. Şehirde büyüyen bir çocuk için tatil dağlarda koyunları otlatmak yani çobanlık yapmak değildir. Fakat hesaba katmadığı şey onu en heyecan verici tatilin beklediği gerçeğidir. BELLE sahibi tarafından kötü muamele gören kocaman kartopu gibi bembeyaz bir köpektir. BELLE ve SEBASTİAN ilk karşılaşmalarında birbirlerine alışmış ve tüm günü birlikte dağlarda koşarak geçirir olmuşlardır. Geçen zaman içerisinde SEBASTİAN, BELLE’NİN yardımıyla cesur bir çobana dönüşür. Şimdi sırada yeni bulduğu dostu BELLE’yi kötü sahibinden korumak için her şeyi yapmaya hazır olan cesur SEBASTİAN’IN en heyecan verici tatil filmini izlemeye hazır olun.",
+            "director":"Pierre Coré",
+            "cast":"Michèle Laroque, Robinson Mensah Rouanet, Alice David",
+            "time":"96 Dakika",
+            "type":"Macera",
             "vizyonda": false, 
             "resim": "/images/belle-ve-sebastian-cesur-dostum-small.png" 
             
         },
         { 
-            "ad": "Film 7", 
+            "ad": "Transformers: Canavarların Yükselişi", 
+            "ing_ad":"Transformers: Rise of the Beasts",
+            "release":"09 Haziran 2023",
+            "desc":"Film, Dünya'da süren Otobotlarla Decepticon’lar arasındaki savaşta yeni bir Transformers türü olan Maximal'leri evrene dahil ediyor.",
+            "director":"Steven Caple Jr.",
+            "cast":"Peter Dinklage, Michelle Yeoh, Pete Davidson",
+            "time":"127 Dakika",
+            "type":"Aksiyon",
             "vizyonda": true, 
-            "resim": "/images/jw4_small.jpg" 
+            "resim": "/images/transformers-canavarlarin-yukselisi.png" 
             
         },
         { 
-            "ad": "Film 8", 
+            "ad": "The Flash", 
+            "ing_ad":"The Flash",
+            "release":"16 Haziran 2023",
+            "desc":"Yönetmenliğini Andy Muschietti’nin yaptığı, senaryosunu Christina Hodson’ın kaleme aldığı The Flash, annesinin ölümünü engellemek için gücünü kullanarak zamanda geriye giden Barry Allen'ın (Ezra Miller), zamanın lineer akışında istenmeyen sonuçlara yol açmasını konu alıyor. Barry, geçmişteki olayları değiştirmek amacıyla zamanda yolculuk yapmak için süper güçlerini kullandığında The Flash’te dünyalar çarpışır. Ancak ailesini kurtarma girişimi istemeden geleceği değiştirdiğinde Barry, General Zod'un yok etme tehdidiyle geri döndüğü ve sığınacak süper kahramanların olmadığı bir gerçeklikte hapsolur. Hapsedilmiş bir Kripton'luyu kurtarmak için, her ne kadar aradığı kişi olmasa da alışılmışın dışında olan bu çok farklı Batman'i emeklilikten vazgeçmeye ikna etmesi gerekmektedir… Nihayetinde, içinde bulunduğu dünyayı kurtarmak ve bildiği geleceğe dönmek için Barry'nin tek umudu hayatı için yarışmaktır. Ancak yaptığı tüm fedakârlıkları evrenin başa dönmesi için yeterli olacak mıdır?",
+            "director":"Andy Muschietti",
+            "cast":"Ezra Miller, Ben Affleck, Sasha Calle, Michael Shannon, Michael Keaton",
+            "time":"150 Dakika",
+            "type":"Aksiyon",
             "vizyonda": false, 
-            "resim": "/images/galaksinin-koruyuculari-small.png" 
+            "resim": "/images/the-flash.png" 
             
         },
         { 
-            "ad": "Film 9", 
+            "ad": "Korkuyorum", 
+            "ing_ad":"Beau is Afraid",
+            "release":"09 Haziran 2023",
+            "desc":"Korkuyorum, otoriter annesi Mona ile çalkantılı bir ilişkisi olan ve babasını hiç tanımayan son derece gergin ve paranoyak bir adam olan Beau Wassermann'ın hikayesini konu ediyor. Kaygı bozukluğundan ve korku ataklarından muzdarip olan Beau, annesinin ölümü üzerine cenazesine katılmak için eski evine gitmek zorunda kalır. Ancak yolculuk sırasında onu bekleyen kötü güçlerle yüzleşmek zorunda kalır. Beau için bu yolculuk, iç dünyanın gizemini ve annesiyle olan ilişkisini çözmeye çalıştığı bir keşif yolculuğuna dönüşür.",
+            "director":"Ari Aster",
+            "cast":"Patti LuPone, Joaquin Phoenix, Amy Ryan",
+            "time":"179 Dakika",
+            "type":"Komedi",
             "vizyonda": true, 
-            "resim": "/images/super-mario-small.png" 
+            "resim": "/images/korkuyorum.png" 
             
         },
         { 
-            "ad": "Film 10", 
+            "ad": "Suzume", 
+            "ing_ad":"Suzume no Tojimari",
+            "release":"26 Mayıs 2023",
+            "desc":"Film, bir felaketin ardından ortaya çıkarak daha büyük yıkıma yol açan kapıları kapatmaya çalışan 17 yaşındaki Suzume’nin olgunlaşma hikâyesini konu alıyor. Gökyüzün kızıla döndüğü, yerin titremeye başladığı Japonya’da felaket kapıdadır. Ülkesini kurtarma misyonunu kararlı bir genç olan Suzume üstlenir. Bütün ülkeye kaos getiren gizemli kapıları kapatmak, başkalarının göremediği doğaüstü güçleri görebilen kahramanımızın görevidir. Böylece, bütün ülkenin kaderinin bağlı olduğu tehlikeli bir yolculuğa çıkar.",
+            "director":"Makoto Shinkai",
+            "cast":"Nanoka Hara, Hokuto Matsumura, Kana Hanazawa",
+            "time":"122 Dakika",
+            "type":"Anime",
             "vizyonda": false, 
-            "resim": "/images/askin-saati-1903-small.png" 
+            "resim": "/images/suzume.png" 
             
         },
         { 
-            "ad": "Film 11", 
+            "ad": "Örümcek-Adam: Örümcek Evrenine Geçiş", 
+            "ing_ad":"Spider-Man: Across the Spider-Verse",
+            "release":"02 Haziran 2023",
+            "desc":"Gwen Stacy’le yeniden bir araya geldikten sonra Miles, Çoklu Evrenleri geçerken orayı canları pahasına korumakla yükümlü olan Örümcek-İnsanlar’la karşılaşır. Ancak ne zaman ki bu kahramanlar karşılaştıkları yeni tehditle nasıl başa çıkılacağı konusunda anlaşmazlığa düşer, Miles kendini diğer Örümcekler’le karşı karşıya bulur. İşte şimdi o en çok sevdiği insanları koruyabilmek için kahramanlığın tanımını tekrar düşünmeli.",
+            "director":"Joaquim Dos Santos, Justin K. Thompson, Kemp Powers",
+            "cast":"Shameik Moore, Hailee Steinfeld",
+            "time":"140 Dakika",
+            "type":"Aksiyon",
             "vizyonda": true, 
-            "resim": "/images/hava-muhalefeti_small.png" 
+            "resim": "/images/ORUMCEK.jpg" 
             
         },
         { 
-            "ad": "Film 12", 
+            "ad": "Hızlı ve Öfkeli 10", 
+            "ing_ad":"Fast X",
+            "release":"18 Mayıs 2023",
+            "desc":"Hızlı ve Öfkeli Efsanesi’nin onuncu filmi olan Hızlı ve Öfkeli 10, sinemanın en önemli ve n popular global film serilerinden birinin son bölümlerini başlatıyor. Artık otuzuncu yılında ve hâlâ başladığı aynı çekirdek kadroyla ve karakterlerle güçlü bir şekilde ilerliyor. Dom Toretto (Vin Diesel) ve ailesi birçok görevde ve birçok imkansızlıklarda yollarına çıkan tüm düşmanları zekice, cesurca ve hızlı sürüşleriyle yenmişti. Şimdi bugüne kadar karşılarına çıkan en ölümcül rakiple karşı karşıyalar: Geçmişin gölgelerinden çıkan, kan davasıyla beslenen ve bu aileyi parçalayıp Dom’un sevdiği her şeyi ve herkesi sonsuza dek yok etmeye kararlı, dehşet verici bir tehlike. 2011 yılının Hızlı ve Öfkeli 5 filminde Dom ve ekibi, Rio de Janeiro’daki bir köprünün üstünde Brezilyalı alçak uyuşturucu kralı Hernan Reyes’i ortadan kaldırıp krallığını yok etmişti. Ama bilmedikleri Reyes’in oğlu Dante’nin (Aquaman’den Jason Momoa) her şeye tanıklık ettiği ve son 12 yılını Dom’un yaptıklarının bedelini ödemesi için bir plan yaparak geçirdiğiydi. Dante’nin planı, Dom’un ailesini Los Angeles’tan Roma’nın yeraltı mezarlarına, Brezilya’dan Londra’ya ve Portekiz’den Antarktika’ya kadar dağıtacak. Yeni müttefikler bulunacak ve eski düşmanlar yeniden ortaya çıkacak. Ama Dom 8 yaşındaki kendi oğlunun (Leo Abelo Perry, Black-ish) Dante’nin intikamının nihai hedefi olduğunu anlayınca her şey değişecek.",
+            "director":"Louis Leterrier",
+            "cast":"Charlize Theron, Michelle Rodriguez, Jason Momoa, Vin Diesel, Jason Statham",
+            "time":"141 Dakika",
+            "type":"Aksiyon",
             "vizyonda": false, 
-            "resim": "/images/belle-ve-sebastian-cesur-dostum-small.png" 
+            "resim": "/images/hizli-ve-ofkeli-10.png" 
             
         }
     ]

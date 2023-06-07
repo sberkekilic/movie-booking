@@ -140,57 +140,57 @@ function resetImage(event) {
 
 function renderMovieList() {
   let moviesToRender = getMoviesToRender();
-  filmListesi.innerHTML = ""; // filmListesi elementini temizle
+  filmListesi.innerHTML = ""; // Clear the filmListesi element
   moviesToRender.forEach(movie => {
-    // Resim divini oluştur
     let imageDiv = document.createElement("div");
     imageDiv.classList.add("image");
-    // Resmi oluştur
+
     let img = document.createElement("img");
     img.src = movie.resim;
     img.alt = movie.ad;
-    // Create the movie name (ad) element
+
     let movieName = document.createElement("p");
     movieName.classList.add("movie-name");
     movieName.textContent = movie.ad;
-    // Roll-over divini oluştur
+
     let rollOverDiv = document.createElement("div");
     rollOverDiv.classList.add("roll-over");
-    // Buton divini oluştur
+
     let buttonDiv = document.createElement("div");
     buttonDiv.classList.add("button");
-    // Butonu oluştur
+
     let button = document.createElement("a");
     button.classList.add("btn", "btn-reverse");
     button.textContent = "Bilet Al";
-    let movieNameParam = encodeURIComponent(movie.ad.toLowerCase().replace(/\s+/g, '-'));
-    let url = `/pages/buy-ticket.html?movie_name=${movieNameParam}&movie_image=${encodeURIComponent(movie.resim)}`;
+    
+    let url = `/pages/buy-ticket.html?movie_name=${encodeURIComponent(movie.ad)}&movie_eng_name=${encodeURIComponent(movie.ing_ad)}&movie_image=${encodeURIComponent(movie.resim)}&movie_release=${encodeURIComponent(movie.release)}&movie_desc=${encodeURIComponent(movie.desc)}&movie_director=${encodeURIComponent(movie.director)}&movie_cast=${encodeURIComponent(movie.cast)}&movie_time=${encodeURIComponent(movie.time)}&movie_type=${encodeURIComponent(movie.type)}&vizyonda=${encodeURIComponent(movie.vizyonda)}`;
+    
     button.setAttribute("href", url);
     button.addEventListener("click", function() {
       window.location.href = url;
     });
-    // Buton divine butonu ekle
+
     buttonDiv.appendChild(button);
-    // Roll-over divine buton divini ekle
     rollOverDiv.appendChild(buttonDiv);
-    // Resim divine resmi ve roll-over divini ekle
+
     imageDiv.appendChild(img);
     imageDiv.appendChild(movieName);
     imageDiv.appendChild(rollOverDiv);
-    // filmListesi elementine resim divini ekle
+
     filmListesi.appendChild(imageDiv);
-    // Event dinleyicilerini ekle
+
     imageDiv.addEventListener("mouseover", function(event) {
       darkenImage(event);
     });
     imageDiv.addEventListener("mouseout", function(event) {
       resetImage(event);
     });
-  
+    
   });
-  // Sayfa ilk açıldığında bilet al butonunu göstermek için resetImage fonksiyonunu çağır
   resetImage();
 }
+
+
 
 function getMoviesToRender() {
   let moviesToRender = [];

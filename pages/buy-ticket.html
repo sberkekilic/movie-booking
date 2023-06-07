@@ -2,29 +2,182 @@
 <html>
 <head>
   <title>Buy Ticket</title>
-  <!-- Add your CSS stylesheets and other head elements here -->
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .section {
+      width: 100%;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+    .section-pink {
+      background-color: #C8A2C8;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 20px;
+      text-align: center;
+    }
+    .movie-details {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .movie-details img {
+      width: auto;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .movie-names {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .movie-info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .movie-info-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+    .movie-info-row p {
+      margin: 0;
+    }
+    h1,
+    h2 {
+      text-align: center;
+    }
+    .breadcrumb {
+      margin-bottom: 20px;
+    }
+    .breadcrumb-item {
+      display: inline-block;
+      margin-right: 5px;
+      color: gray;
+    }
+    .breadcrumb-item::after {
+      content: ">";
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+    .breadcrumb-item:last-child::after {
+      content: "";
+    }
+    .breadcrumb-item a {
+      color: gray;
+      text-decoration: none;
+    }
+    .breadcrumb-item a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
   <h1>Buy Ticket</h1>
-
+  <div class="section section-pink">
+    <div class="breadcrumb">
+      <span class="breadcrumb-item"><a href="/web/index.html">Ana Sayfa</a></span>
+      <span class="breadcrumb-item">b</span>
+      <span class="breadcrumb-item">Movie Name</span>
+    </div>
+    <div class="movie-details">
+      <img id="movieImage" alt="">
+      <div class="movie-names">
+        <h2><span id="movieName"></span></h2>
+        <h2><span id="movieEngName"></span></h2>
+      </div>
+      <div id="movieInfo" class="movie-info"></div>
+    </div>
+  </div>
+  <div class="section section-green">
+    <h2>Other movies</h2>
+  </div>
   <script>
     // Get the movie name and image parameters from the URL
     const urlParams = new URLSearchParams(window.location.search);
     const movieName = urlParams.get('movie_name');
+    const movieEngName = urlParams.get('movie_eng_name');
     const movieImage = decodeURIComponent(urlParams.get('movie_image'));
-  
+    const movieRelease = urlParams.get('movie_release');
+    const movieDesc = urlParams.get('movie_desc');
+    const movieDirector = urlParams.get('movie_director');
+    const movieCast = urlParams.get('movie_cast');
+    const movieTime = urlParams.get('movie_time');
+    const movieType = urlParams.get('movie_type');
+    const vizyonda = urlParams.get('vizyonda');
     // Display the movie name on the page
-    const movieNameElement = document.createElement('p');
-    movieNameElement.textContent = `Movie: ${movieName}`;
-    document.body.appendChild(movieNameElement);
-  
+    const movieNameElement = document.getElementById('movieName');
+    movieNameElement.textContent = movieName;
+    const movieEngNameElement = document.getElementById('movieEngName');
+    movieEngNameElement.textContent = movieEngName;
+    // Update breadcrumb items
+    const breadcrumbItems = document.querySelectorAll('.breadcrumb-item');
+    if (vizyonda === 'true') {
+      breadcrumbItems[1].textContent = "Vizyondaki Filmler";
+    } else {
+      breadcrumbItems[1].textContent = "Gelecek Filmler";
+    }
+    breadcrumbItems[2].textContent = movieName;
     // Display the movie image on the page
-    const movieImageElement = document.createElement('img');
+    const movieImageElement = document.getElementById('movieImage');
     movieImageElement.src = movieImage;
     movieImageElement.alt = movieName;
-    document.body.appendChild(movieImageElement);
+    // Display the additional movie information
+    const movieInfoElement = document.getElementById('movieInfo');
+    if (movieRelease) {
+      const releaseDateElement = document.createElement('p');
+      releaseDateElement.textContent = `Vizyon Tarihi: ${movieRelease}`;
+      movieInfoElement.appendChild(releaseDateElement);
+    }
+    if (movieDesc) {
+      const descriptionElement = document.createElement('p');
+      descriptionElement.textContent = `${movieDesc}`;
+      movieInfoElement.appendChild(descriptionElement);
+    }
+    if (movieDirector || movieCast || movieTime || movieType) {
+      const movieInfoRowElement = document.createElement('div');
+      movieInfoRowElement.className = 'movie-info-row';
+      if (movieDirector) {
+        const directorElement = document.createElement('p');
+        directorElement.textContent = `Yönetmen: ${movieDirector}`;
+        movieInfoRowElement.appendChild(directorElement);
+      }
+      if (movieCast) {
+        const castElement = document.createElement('p');
+        castElement.textContent = `Oyuncular: ${movieCast}`;
+        movieInfoRowElement.appendChild(castElement);
+      }
+      if (movieTime) {
+        const runningTimeElement = document.createElement('p');
+        runningTimeElement.textContent = `Süre: ${movieTime}`;
+        movieInfoRowElement.appendChild(runningTimeElement);
+      }
+      if (movieType) {
+        const movieTypeElement = document.createElement('p');
+        movieTypeElement.textContent = `Tür: ${movieType}`;
+        movieInfoRowElement.appendChild(movieTypeElement);
+      }
+      movieInfoElement.appendChild(movieInfoRowElement);
+    }
   </script>
-  
-  <!-- Add your HTML content and other body elements here -->  
+  <!-- Add your HTML content and other body elements here -->
 </body>
 </html>
