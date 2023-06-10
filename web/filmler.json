@@ -87,7 +87,7 @@
             "time":"127 Dakika",
             "type":"Aksiyon",
             "vizyonda": true, 
-            "resim": "/images/transformers-canavarlarin-yukselisi.png" 
+            "resim": "/images/transformers-canavarlarin-yukselisi.jpeg" 
             
         },
         { 
@@ -100,7 +100,7 @@
             "time":"150 Dakika",
             "type":"Aksiyon",
             "vizyonda": false, 
-            "resim": "/images/the-flash.png" 
+            "resim": "/images/the-flash.jpeg" 
             
         },
         { 
@@ -113,7 +113,7 @@
             "time":"179 Dakika",
             "type":"Komedi",
             "vizyonda": true, 
-            "resim": "/images/korkuyorum.png" 
+            "resim": "/images/korkuyorum.jpeg" 
             
         },
         { 

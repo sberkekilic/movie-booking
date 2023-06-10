@@ -210,7 +210,8 @@ footer {
 }
 
 .movie-list-container {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   flex-wrap: nowrap;
   width: 100%;
   overflow-x: auto;
@@ -218,6 +219,26 @@ footer {
   -webkit-overflow-scrolling: touch;
   padding: 10px;
   scroll-snap-type: x mandatory;
+}
+
+
+.movie-list-container .image {
+  flex: 0 0 auto;
+  width: auto; /* Adjust the width according to your needs */
+  height: auto;
+}
+
+.movie-list-container .movie-name {
+  flex: 1 1 auto;
+  margin-left: 10px; /* Add some spacing between the image and the movie name */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.movie-list-container .movie-name p {
+  margin: 0;
+  white-space: normal;
 }
 
 .movie-list-container::-webkit-scrollbar {
