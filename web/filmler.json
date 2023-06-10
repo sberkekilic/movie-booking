@@ -52,14 +52,14 @@
             
         },
         { 
-            "ad": "Film 5", 
-            "ing_ad":"",
-            "release":"",
-            "desc":"",
-            "director":"",
-            "cast":"",
-            "time":"",
-            "type":"",
+            "ad": "Hava Muhalefeti", 
+            "ing_ad":"Adverse Weather",
+            "release":"14 Nisan 2023",
+            "desc":"Milletvekili adayı Cemil Yıldırım, sevgilisi Gözde ile birlikte hafta sonu kaçamağı yapmak için Bodrum uçağındaki yerlerini almışlardır. Küçük bir kaçamak diye başlayan hafta sonu tatili çok eğlenceli bir yolculuğa dönüşecektir. İkili ve uçaktaki diğer yolcular kendilerini bekleyen sürprizlerden habersizdir. Bakalım bu kahkaha dolu yolculukta neler olacak?",
+            "director":"Murat Kepez",
+            "cast":"Ali Sunal, Burak Hakkı, Doğa Rutkay, Ege Kökenli",
+            "time":"105 Dakika",
+            "type":"Komedi",
             "vizyonda": true, 
             "resim": "/images/hava-muhalefeti_small.png" 
             

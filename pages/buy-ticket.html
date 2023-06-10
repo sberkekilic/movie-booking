@@ -26,12 +26,16 @@
       align-items: flex-start;
       justify-content: center;
       gap: 20px;
-      text-align: center;
+      text-align: start;
     }
+
+    .section-pink-content {
+      padding: 0 100px; /* Added padding */
+    }
+
     .movie-details {
       display: flex;
       flex-direction: row;
-      gap: 20px;
       align-items: flex-start;
     }
     .movie-details img {
@@ -39,13 +43,22 @@
       height: 300px;
       object-fit: cover;
       border-radius: 8px;
+      padding-right: 30px;
+    }
+    .movie-column {
+      display: flex;
+      flex-direction: column;
+      gap: 0px;
     }
     .movie-names {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 10px;
+      gap: 0;
     }
+    .movie-names h2 {
+    margin: 0;
+  }
     .movie-info {
       display: flex;
       flex-direction: column;
@@ -56,7 +69,7 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 10px;
+      gap: 50px;
     }
     .movie-info-row p {
       margin: 0;
@@ -71,7 +84,7 @@
     .breadcrumb-item {
       display: inline-block;
       margin-right: 5px;
-      color: gray;
+      color: #232323;
     }
     .breadcrumb-item::after {
       content: ">";
@@ -82,29 +95,42 @@
       content: "";
     }
     .breadcrumb-item a {
-      color: gray;
+      color: #232323;
       text-decoration: none;
     }
     .breadcrumb-item a:hover {
       text-decoration: underline;
     }
+    .director-info {
+  margin-bottom: 20px; /* Adjust the height value as needed */
+}
+
   </style>
+  
+  
+  
 </head>
 <body>
   <h1>Buy Ticket</h1>
   <div class="section section-pink">
-    <div class="breadcrumb">
-      <span class="breadcrumb-item"><a href="/web/index.html">Ana Sayfa</a></span>
-      <span class="breadcrumb-item">b</span>
-      <span class="breadcrumb-item">Movie Name</span>
-    </div>
-    <div class="movie-details">
-      <img id="movieImage" alt="">
-      <div class="movie-names">
-        <h2><span id="movieName"></span></h2>
-        <h2><span id="movieEngName"></span></h2>
+    <div class="section-pink-content"> <!-- Added container -->
+      <div class="breadcrumb">
+        <span class="breadcrumb-item"><a href="/web/index.html">Ana Sayfa</a></span>
+        <span class="breadcrumb-item">b</span>
+        <span class="breadcrumb-item">Movie Name</span>
       </div>
-      <div id="movieInfo" class="movie-info"></div>
+      <div class="movie-details">
+        <div class="movie-column">
+          <img id="movieImage" alt="">
+        </div>
+        <div class="movie-column">
+          <div class="movie-names">
+            <h2><span id="movieName"></span></h2>
+            <h2><span id="movieEngName"></span></h2>
+          </div>
+          <div id="movieInfo" class="movie-info"></div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="section section-green">
@@ -126,8 +152,10 @@
     // Display the movie name on the page
     const movieNameElement = document.getElementById('movieName');
     movieNameElement.textContent = movieName;
+    movieNameElement.style.fontSize = '45px';
     const movieEngNameElement = document.getElementById('movieEngName');
     movieEngNameElement.textContent = movieEngName;
+    movieEngNameElement.style.fontSize = '18px';
     // Update breadcrumb items
     const breadcrumbItems = document.querySelectorAll('.breadcrumb-item');
     if (vizyonda === 'true') {
@@ -145,6 +173,8 @@
     if (movieRelease) {
       const releaseDateElement = document.createElement('p');
       releaseDateElement.textContent = `Vizyon Tarihi: ${movieRelease}`;
+      releaseDateElement.style.margin = '0';
+      releaseDateElement.style.fontSize = '14px';
       movieInfoElement.appendChild(releaseDateElement);
     }
     if (movieDesc) {
@@ -157,22 +187,23 @@
       movieInfoRowElement.className = 'movie-info-row';
       if (movieDirector) {
         const directorElement = document.createElement('p');
-        directorElement.textContent = `Yönetmen: ${movieDirector}`;
+        directorElement.classList.add('director-info');
+        directorElement.innerHTML = `Yönetmen<br>${movieDirector}`;
         movieInfoRowElement.appendChild(directorElement);
       }
       if (movieCast) {
         const castElement = document.createElement('p');
-        castElement.textContent = `Oyuncular: ${movieCast}`;
+        castElement.innerHTML = `Oyuncular<br>${movieCast}`;
         movieInfoRowElement.appendChild(castElement);
       }
       if (movieTime) {
         const runningTimeElement = document.createElement('p');
-        runningTimeElement.textContent = `Süre: ${movieTime}`;
+        runningTimeElement.innerHTML = `Süre<br>${movieTime}`;
         movieInfoRowElement.appendChild(runningTimeElement);
       }
       if (movieType) {
         const movieTypeElement = document.createElement('p');
-        movieTypeElement.textContent = `Tür: ${movieType}`;
+        movieTypeElement.innerHTML = `Tür<br>${movieType}`;
         movieInfoRowElement.appendChild(movieTypeElement);
       }
       movieInfoElement.appendChild(movieInfoRowElement);
