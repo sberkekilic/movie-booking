@@ -18,7 +18,9 @@ header {
 .butonlar {
   display: flex;
   justify-content: flex-start;
-  margin: 20px 0;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  padding-left: 50px;
 }
 
 #film-listesi {
@@ -169,6 +171,11 @@ li.film-karti {
 
 .carousel {
   position: relative;
+}
+
+.carousel-inner img {
+  width: 100%;
+  height: auto;
 }
 
 .carousel-control-prev,
