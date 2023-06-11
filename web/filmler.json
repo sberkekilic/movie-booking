@@ -10,7 +10,7 @@
             "time":"169 Dakika",
             "type":"Aksiyon",
             "vizyonda": true, 
-            "resim": "/images/jw4_small.jpg" 
+            "resim": "/images/jw4_small.jpeg" 
         },
         { 
             "ad": "Galaksinin Koruyucuları 3", 
@@ -22,7 +22,7 @@
             "time":"150 Dakika",
             "type":"Aksiyon",
             "vizyonda": false, 
-            "resim": "/images/galaksinin-koruyuculari-small.png" 
+            "resim": "/images/galaksinin-koruyuculari-3-small.png" 
             
         },
         { 
@@ -35,7 +35,7 @@
             "time":"92 Dakika",
             "type":"Animasyon",
             "vizyonda": true, 
-            "resim": "/images/super-mario-small.png" 
+            "resim": "/images/super-mario-small.jpeg" 
             
         },
         { 
@@ -48,7 +48,7 @@
             "time":"114 Dakika",
             "type":"Komedi",
             "vizyonda": false, 
-            "resim": "/images/askin-saati-1903-small.png" 
+            "resim": "/images/askin-saati-1903-small.jpeg" 
             
         },
         { 
@@ -61,7 +61,7 @@
             "time":"105 Dakika",
             "type":"Komedi",
             "vizyonda": true, 
-            "resim": "/images/hava-muhalefeti_small.png" 
+            "resim": "/images/hava-muhalefeti-small.jpeg" 
             
         },
         { 
@@ -74,7 +74,7 @@
             "time":"96 Dakika",
             "type":"Macera",
             "vizyonda": false, 
-            "resim": "/images/belle-ve-sebastian-cesur-dostum-small.png" 
+            "resim": "/images/belle-ve-sebastian-cesur-dostum-small.jpeg" 
             
         },
         { 
@@ -126,7 +126,7 @@
             "time":"122 Dakika",
             "type":"Anime",
             "vizyonda": false, 
-            "resim": "/images/suzume.png" 
+            "resim": "/images/suzume.jpeg" 
             
         },
         { 
@@ -139,7 +139,7 @@
             "time":"140 Dakika",
             "type":"Aksiyon",
             "vizyonda": true, 
-            "resim": "/images/ORUMCEK.jpg" 
+            "resim": "/images/orumcek.jpeg" 
             
         },
         { 
@@ -152,7 +152,7 @@
             "time":"141 Dakika",
             "type":"Aksiyon",
             "vizyonda": false, 
-            "resim": "/images/hizli-ve-ofkeli-10.png" 
+            "resim": "/images/hizli-ve-ofkeli-10.jpeg" 
             
         }
     ]
