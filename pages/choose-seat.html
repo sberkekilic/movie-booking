@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sinema Bileti Koltuk Seçme Ekranı</title>
+  <style>
+    .seat-map {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .seat {
+      width: 40px;
+      height: 40px;
+      margin: 5px;
+      background-color: #e1e1e1;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 12px;
+    }
+
+    .selected {
+      background-color: #ffcc00;
+    }
+
+    .occupied {
+      background-color: #c1c1c1;
+      cursor: not-allowed;
+    }
+
+    .screen {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .booking-info {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .booking-info span {
+      font-weight: bold;
+      margin-right: 5px;
+    }
+
+    .book-button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    var selectedSeats = [];
+
+    function selectSeat(seatId) {
+      var seatElement = document.getElementById(seatId);
+      var index = selectedSeats.indexOf(seatId);
+
+      if (index === -1) {
+        seatElement.classList.add("selected");
+        selectedSeats.push(seatId);
+      } else {
+        seatElement.classList.remove("selected");
+        selectedSeats.splice(index, 1);
+      }
+
+      updateBookingInfo();
+    }
+
+    function updateBookingInfo() {
+      var bookingInfo = document.getElementById("booking-info");
+
+      if (selectedSeats.length > 0) {
+        bookingInfo.innerHTML = "Seçilen koltuklar: " + selectedSeats.join(", ");
+      } else {
+        bookingInfo.innerHTML = "Henüz koltuk seçilmedi.";
+      }
+    }
+
+    function bookTickets() {
+      if (selectedSeats.length > 0) {
+        // Burada seçilen koltukları işlemek için gerekli olan kodu ekleyebilirsiniz.
+        // Örneğin, seçilen koltukları sunucuya gönderip işlem yapabilirsiniz.
+        alert("Biletler başarıyla satın alındı!\nSeçilen koltuklar: " + selectedSeats.join(", "));
+
+        // Koltukları sıfırla
+        selectedSeats = [];
+        var seats = document.getElementsByClassName("seat");
+        for (var i = 0; i < seats.length; i++) {
+          seats[i].classList.remove("selected");
+          seats[i].classList.remove("occupied");
+        }
+
+        updateBookingInfo();
+      } else {
+        alert("Lütfen bir koltuk seçin.");
+      }
+    }
+
+    // Örnek olarak bazı koltukları başlangıçta dolu olarak işaretleyelim
+    function markOccupiedSeats() {
+      var occupiedSeats = ["seat3", "seat8", "seat15"];
+      for (var i = 0; i < occupiedSeats.length; i++) {
+        var seatElement = document.getElementById(occupiedSeats[i]);
+        seatElement.classList.add("occupied");
+        seatElement.removeAttribute("onclick");
+      }
+    }
+
+    // Sayfa yüklendiğinde işlevleri çağır
+    window.onload = function() {
+      markOccupiedSeats();
+      updateBookingInfo();
+    };
+  </script>
+</head>
+<body>
+  <h1>Sinema Bileti Koltuk Seçme Ekranı</h1>
+
+  <div class="screen">
+    <h2>Perde</h2>
+  </div>
+
+  <div class="seat-map">
+    <div class="seat" id="seat1" onclick="selectSeat('seat1')">1</div>
+    <div class="seat" id="seat2" onclick="selectSeat('seat2')">2</div>
+    <div class="seat" id="seat3" onclick="selectSeat('seat3')">3</div>
+    <div class="seat" id="seat4" onclick="selectSeat('seat4')">4</div>
+    <div class="seat" id="seat5" onclick="selectSeat('seat5')">5</div>
+    <div class="seat" id="seat6" onclick="selectSeat('seat6')">6</div>
+    <div class="seat" id="seat7" onclick="selectSeat('seat7')">7</div>
+    <div class="seat" id="seat8" onclick="selectSeat('seat8')">8</div>
+    <div class="seat" id="seat9" onclick="selectSeat('seat9')">9</div>
+    <div class="seat" id="seat10" onclick="selectSeat('seat10')">10</div>
+    <div class="seat" id="seat11" onclick="selectSeat('seat11')">11</div>
+    <div class="seat" id="seat12" onclick="selectSeat('seat12')">12</div>
+    <div class="seat" id="seat13" onclick="selectSeat('seat13')">13</div>
+    <div class="seat" id="seat14" onclick="selectSeat('seat14')">14</div>
+    <div class="seat" id="seat15" onclick="selectSeat('seat15')">15</div>
+  </div>
+
+  <div class="booking-info" id="booking-info">
+    <!-- Seçilen koltuklar burada görünecek -->
+  </div>
+
+  <button class="book-button" onclick="bookTickets()">Biletleri Satın Al</button>
+</body>
+</html>

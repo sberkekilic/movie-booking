@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sinema Bileti Alma</title>
+  <style>
+    .booking-form {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .booking-form label {
+      font-weight: bold;
+      margin-right: 5px;
+    }
+
+    .book-button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    function redirectToSeatSelection() {
+      // Bilet seçme sayfasına yönlendir
+      window.location.href = 'choose-seat.html';
+    }
+
+    function processBooking() {
+      // Bilet alma işlemlerini burada gerçekleştir
+      var selectedSeats = JSON.parse(sessionStorage.getItem('selectedSeats'));
+      var selectedTicketType = document.querySelector('input[name="ticket-type"]:checked').value;
+
+      // Örnek bir işlem: Konsola seçilen koltukları ve bilet türünü yazdırma
+      console.log("Seçilen Koltuklar: ", selectedSeats);
+      console.log("Bilet Türü: ", selectedTicketType);
+
+      // Bilet alma işlemi tamamlandıktan sonra seçilen bilgileri temizle
+      sessionStorage.removeItem('selectedSeats');
+      window.alert("Bilet alma işlemi tamamlandı!");
+      redirectToSeatSelection();
+    }
+  </script>
+</head>
+<body>
+  <h1>Sinema Bileti Alma</h1>
+
+  <div class="booking-form">
+    <label for="ticket-type-adult">Yetişkin Bilet:</label>
+    <input type="radio" id="ticket-type-adult" name="ticket-type" value="adult" checked>
+    <label for="ticket-type-student">Öğrenci Bilet:</label>
+    <input type="radio" id="ticket-type-student" name="ticket-type" value="student">
+    <button class="book-button" onclick="processBooking()">Biletleri Onayla</button>
+  </div>
+</body>
+</html>

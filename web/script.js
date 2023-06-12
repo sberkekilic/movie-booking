@@ -143,11 +143,12 @@ function renderMovieList() {
   filmListesi.innerHTML = ""; // Clear the filmListesi element
   moviesToRender.forEach(movie => {
     let imageDiv = document.createElement("div");
-    imageDiv.classList.add("image");
+    imageDiv.classList.add("image-card");
 
     let img = document.createElement("img");
     img.src = movie.resim;
     img.alt = movie.ad;
+    img.style.width = "100%";
 
     let movieName = document.createElement("p");
     movieName.classList.add("movie-name");
